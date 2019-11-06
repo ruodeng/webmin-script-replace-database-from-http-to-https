@@ -1,0 +1,4 @@
+mysqldump  $user > /root/$user.sql; 
+cp /root/$user.sql /root/ruo/$user.sql; 
+sed  -i -r -e    's/http\:\/\/([a-z]+)\.dengruo\.com/https\:\/\/\1\.dengruo\.com/g'  /root/$user.sql;
+mysql   $user <  /root/$user.sql; 
